@@ -59,21 +59,26 @@ const menuItems = [
         listText: "Contact"
     }
 ];
-
+// This may happen when you use setState() inside componentDidUpdate() without conditional rendering !!
+//  So if you did so then make sure setState() is executed under some if/else condition !!
 
 const Navbar = () => {
 
     const [state, setState] = useState({
         right: false
-    });
-    const toggleSlider = (slider, open) =>  {
+    })
+
+    const toggleSlider = (slider, open) => () => {
         setState({ ...state, [slider]: open });
     };
  
     const classes = useStyles();
 
     const sideList = slider => (
-    <Box component="div" className={classes.menuSliderConatainer}>
+    <Box 
+        component="div" 
+        className={classes.menuSliderConatainer}
+    >
         <Avatar className={classes.avatar} src={avatar} alt="Russel Crowe" />
             <Divider />
                 <List>
@@ -98,7 +103,7 @@ const Navbar = () => {
         <Box component="nav">
             <AppBar position="static" style={{background: "#222"}}>
                 <Toolbar>
-                    <IconButton onClick={toggleSlider("right", true)}>
+                    <IconButton onClick={toggleSlider("right", true)}> 
                         <ArrowBack style={{color: "tomato" }}/>    
                     </IconButton>    
                     <Typography variant="h5" style={{color: "tan"}}>
