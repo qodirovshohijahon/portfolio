@@ -12,5 +12,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Additional dependencies
 
  & 
-react-typed => https://www.npmjs.com/package/react-typed
-react-particles-js => <b> https://www.npmjs.com/package/react-typed </b>
+<b> react-typed => </b>
+<b> react-particles-js =></b>
