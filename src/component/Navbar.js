@@ -9,7 +9,7 @@ import {
     IconButton,
     ListItemText,
     Avatar,
-    ListItemIcon,
+    ListItemIcon,   
     Divider,
     List,
     Typography,
@@ -78,12 +78,13 @@ const Navbar = () => {
     <Box 
         component="div" 
         className={classes.menuSliderConatainer}
+        onClick={toggleSlider(slider, false)}
     >
         <Avatar className={classes.avatar} src={avatar} alt="Russel Crowe" />
             <Divider />
                 <List>
                     {menuItems.map((lsItem, key) => (
-                        <ListItem  key={key}>  
+                        <ListItem  button key={key}>  
                                 <ListItemIcon className={classes.listItem}>
                                     {lsItem.listIcon}
                                 </ListItemIcon>
